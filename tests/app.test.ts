@@ -24,4 +24,12 @@ describe("API Basic Tests", () => {
     expect(res.status).toBe(200);
     expect(Array.isArray(res.body.users)).toBe(true);
   });
+
+  test("GET /welcome should return welcome message", async () => {
+    const res = await request(app).get("/welcome");
+    expect(res.status).toBe(200);
+    expect(res.body.message).toBe("Welcome to Kiran API!");
+  });
+
+
 });
